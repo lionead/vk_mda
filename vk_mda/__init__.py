@@ -14,5 +14,5 @@ from .vk_api import VkApi
 
 
 __author__ = 'lionead'
-__version__ = '11.9.1'
+__version__ = '11.9.2'
 __email__ = 'lionia058@gmail.com'
