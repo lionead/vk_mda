@@ -12,9 +12,6 @@ import six
 from .utils import sjson_dumps
 
 
-
-
-
 class VkKeyboardColor(Enum):
     """ Возможные цвета кнопок """
 
@@ -30,6 +27,7 @@ class VkKeyboardColor(Enum):
     #: Зелёная
     POSITIVE = 'positive'
 
+
 class VkKeyboardButton(Enum):
     """ Возможные типы кнопки """
 
@@ -44,13 +42,12 @@ class VkKeyboardButton(Enum):
 
     #: Кнопка с приложением VK Apps
     VKAPPS = "open_app"
-    
+
     #: Кнопка с ссылкой
     OPENLINK = "open_link"
-    
+
     #: CallBack кнопка
     CALLBACK = "callback"
-    
 
 
 class VkKeyboard(object):
@@ -84,7 +81,7 @@ class VkKeyboard(object):
         keyboard = cls()
         keyboard.keyboard['buttons'] = []
         return keyboard.get_keyboard()
-    
+
     def add_callback_button(self, label, color=VkKeyboardColor.DEFAULT, payload=None):
         """ Добавить callback кнопку.
             Максимальное количество кнопок на строке - 4
@@ -120,7 +117,7 @@ class VkKeyboard(object):
                 'label': label,
             }
         })
-        
+
     def add_button(self, label, color=VkKeyboardColor.DEFAULT, payload=None):
         """ Добавить кнопку с текстом.
             Максимальное количество кнопок на строке - 4
@@ -169,8 +166,8 @@ class VkKeyboard(object):
 
         if len(current_line) != 0:
             raise ValueError(
-                    'This type of button takes the entire width of the line'
-                    )
+                'This type of button takes the entire width of the line'
+            )
 
         if payload is not None and not isinstance(payload, six.string_types):
             payload = sjson_dumps(payload)
@@ -199,8 +196,8 @@ class VkKeyboard(object):
 
         if len(current_line) != 0:
             raise ValueError(
-                    'This type of button takes the entire width of the line'
-                    )
+                'This type of button takes the entire width of the line'
+            )
 
         if payload is not None and not isinstance(payload, six.string_types):
             payload = sjson_dumps(payload)
@@ -237,8 +234,8 @@ class VkKeyboard(object):
 
         if len(current_line) != 0:
             raise ValueError(
-                    'This type of button takes the entire width of the line'
-                    )
+                'This type of button takes the entire width of the line'
+            )
 
         if payload is not None and not isinstance(payload, six.string_types):
             payload = sjson_dumps(payload)
@@ -255,7 +252,7 @@ class VkKeyboard(object):
                 'hash': hash
             }
         })
-        
+
     def add_openlink_button(self, label, link, payload=None):
         """ Добавить кнопку с ссылкой
             Максимальное количество кнопок на строке - 4
@@ -280,12 +277,11 @@ class VkKeyboard(object):
         current_line.append({
             'action': {
                 'type': button_type,
-                'link' : link,
+                'link': link,
                 'label': label,
                 'payload': payload
             }
         })
-        
 
     def add_line(self):
         """ Создаёт новую строку, на которой можно размещать кнопки.

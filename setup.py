@@ -4,10 +4,10 @@ from io import open
 from setuptools import setup
 
 """
-:authors: python273
+:authors: lionead
 :license: Apache License, Version 2.0, see LICENSE file
 
-:copyright: (c) 2019 python273
+:copyright: (c) 2020 lionead
 """
 
 
@@ -17,11 +17,11 @@ with open('README.md', encoding='utf-8') as f:
     long_description = f.read()
 
 setup(
-    name='vk_api',
+    name='vk_mda',
     version=version,
 
-    author='python273',
-    author_email='vk_api@python273.pw',
+    author='lionead',
+    author_email='lionia058@gmail.com',
 
     description=(
         u'Python модуль для написания скриптов для социальной сети '
@@ -30,10 +30,8 @@ setup(
     long_description=long_description,
     long_description_content_type='text/markdown',
 
-    url='https://github.com/python273/vk_api',
-    download_url='https://github.com/python273/vk_api/archive/v{}.zip'.format(
-        version
-    ),
+    url='https://github.com/lionead/vk_mda',
+    download_url='https://github.com/lionead/vk_mda/archive/master.zip',
 
     license='Apache License, Version 2.0, see LICENSE file',
 

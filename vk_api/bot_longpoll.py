@@ -23,6 +23,8 @@ class VkBotEventType(Enum):
     MESSAGE_REPLY = 'message_reply'
     MESSAGE_EDIT = 'message_edit'
 
+    MESSAGE_EVENT = 'message_event'
+
     MESSAGE_TYPING_STATE = 'message_typing_state'
 
     MESSAGE_ALLOW = 'message_allow'
@@ -167,7 +169,7 @@ class VkBotMessageEvent(VkBotEvent):
         self.chat_id = None
 
         peer_id = self.obj.peer_id or self.message.peer_id
-        
+
         if peer_id < 0:
             self.from_group = True
         elif peer_id < CHAT_START_ID:

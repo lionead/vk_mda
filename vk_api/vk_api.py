@@ -35,7 +35,6 @@ RE_TOKEN_URL = re.compile(r'location\.href = "(.*?)"\+addr;')
 RE_PHONE_PREFIX = re.compile(r'label ta_r">\+(.*?)<')
 RE_PHONE_POSTFIX = re.compile(r'phone_postfix">.*?(\d+).*?<')
 
-
 DEFAULT_USER_SCOPE = sum(VkUserPermissions)
 
 
@@ -128,8 +127,8 @@ class VkApi(object):
     @property
     def _sid(self):
         return (
-            self.http.cookies.get('remixsid') or
-            self.http.cookies.get('remixsid6')
+                self.http.cookies.get('remixsid') or
+                self.http.cookies.get('remixsid6')
         )
 
     def auth(self, reauth=False, token_only=False):
@@ -647,11 +646,13 @@ class VkApi(object):
 
         return response if raw else response['response']
 
+
 class VkApiGroup(VkApi):
     """Предназначен для авторизации с токеном группы.
     Увеличивает частоту обращений к API с 3 до 20 в секунду.
     """
     RPS_DELAY = 1 / 20.0
+
 
 class VkApiMethod(object):
     """ Дает возможность обращаться к методам API через:
