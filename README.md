@@ -6,7 +6,7 @@ vk_mda (vk_api mod) ![Python 2.7, 3.4+](https://img.shields.io/pypi/pyversions/v
 * [Официальная документация по методам API](https://vk.com/dev/methods)
 
 ```python
-import vk_mda.vk_api as vk_api
+import vk_mda as vk_api
 
 vk_session = vk_api.VkApi('+71112223344', 'mypassword')
 vk_session.auth()
@@ -18,4 +18,4 @@ print(vk.wall.post(message='Hello world!'))
 
 Установка
 ------------
-    $ git clone https://github.com/lionead/vk_mda.git
+    $ pip install vk-mda

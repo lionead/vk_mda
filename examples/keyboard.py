@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-import vk_api
-from vk_api.keyboard import VkKeyboard, VkKeyboardColor
-from vk_api.utils import get_random_id
+import vk_mda
+from vk_mda.keyboard import VkKeyboard, VkKeyboardColor
+from vk_mda.utils import get_random_id
 
 
 def main():
     """ Пример создания клавиатуры для отправки ботом """
 
-    vk_session = vk_api.VkApi(token='bot_api_token')
+    vk_session = vk_mda.VkApi(token='bot_api_token')
     vk = vk_session.get_api()
 
     keyboard = VkKeyboard(one_time=True)

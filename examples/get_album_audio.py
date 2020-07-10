@@ -1,18 +1,18 @@
 # -*- coding: utf-8 -*-
 
-import vk_api
-from vk_api.audio import VkAudio
+import vk_mda
+from vk_mda.audio import VkAudio
 
 
 def main():
     """ Пример отображения 5 последних альбомов пользователя """
 
     login, password = 'login', 'password'
-    vk_session = vk_api.VkApi(login, password)
+    vk_session = vk_mda.VkApi(login, password)
 
     try:
         vk_session.auth()
-    except vk_api.AuthError as error_msg:
+    except vk_mda.AuthError as error_msg:
         print(error_msg)
         return
 

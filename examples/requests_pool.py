@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import vk_api
+import vk_mda
 
 
 def main():
@@ -10,15 +10,15 @@ def main():
     """
 
     login, password = 'python@vk.com', 'mypassword'
-    vk_session = vk_api.VkApi(login, password)
+    vk_session = vk_mda.VkApi(login, password)
 
     try:
         vk_session.auth(token_only=True)
-    except vk_api.AuthError as error_msg:
+    except vk_mda.AuthError as error_msg:
         print(error_msg)
         return
 
-    with vk_api.VkRequestsPool(vk_session) as pool:
+    with vk_mda.VkRequestsPool(vk_session) as pool:
         friends = pool.method('friends.get')
         status = pool.method('status.get')
 
@@ -43,7 +43,7 @@ def main():
         будет выбрасываться исключение
         """
         request_with_error.result
-    except vk_api.VkRequestsPoolException as e:
+    except vk_mda.VkRequestsPoolException as e:
         print('Error:', e)
 
     """ Пример получения друзей у нескольких пользователей за один запрос
@@ -51,7 +51,7 @@ def main():
 
     friends = {}
 
-    with vk_api.VkRequestsPool(vk_session) as pool:
+    with vk_mda.VkRequestsPool(vk_session) as pool:
         for user_id in [1, 183433824]:
             friends[user_id] = pool.method('friends.get', {
                 'user_id': user_id,
@@ -72,7 +72,7 @@ def main():
 
         Кроме того не нужно получать .result для каждого ключа.
     """
-    friends, errors = vk_api.vk_request_one_param_pool(
+    friends, errors = vk_mda.vk_request_one_param_pool(
         vk_session,
         'friends.get',  # Метод
         key='user_id',  # Изменяющийся параметр

@@ -18,22 +18,22 @@ sys.path.insert(0, os.path.abspath('../'))
 
 from datetime import datetime
 
-import vk_api
+import vk_mda
 
 # -- Project information -----------------------------------------------------
 
-project = 'vk_api'
+project = 'vk_mda'
 copyright = '{:%Y}, <a href="https://python273.pw">{}</a>'.format(
     datetime.utcnow(),
-    vk_api.__author__
+    vk_mda.__author__
 )
 
-author = vk_api.__author__
+author = vk_mda.__author__
 
 # The short X.Y version
-version = vk_api.__version__
+version = vk_mda.__version__
 # The full version, including alpha/beta/rc tags
-release = vk_api.__version__
+release = vk_mda.__version__
 
 
 # -- General configuration ---------------------------------------------------
@@ -94,7 +94,7 @@ html_theme = 'alabaster'
 html_theme_options = {
     'show_powered_by': False,
     'github_user': 'python273',
-    'github_repo': 'vk_api',
+    'github_repo': 'vk_mda',
     'github_banner': True,
     'github_type': 'star',
     'show_related': False
@@ -160,7 +160,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'vk_api.tex', 'vk\\_api Documentation',
+    (master_doc, 'vk_mda.tex', 'vk\\_api Documentation',
      'python273', 'manual'),
 ]
 
@@ -170,7 +170,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'vk_api', 'vk_api Documentation',
+    (master_doc, 'vk_mda', 'vk_mda Documentation',
      [author], 1)
 ]
 
@@ -181,8 +181,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'vk_api', 'vk_api Documentation',
-     author, 'vk_api', 'One line description of project.',
+    (master_doc, 'vk_mda', 'vk_mda Documentation',
+     author, 'vk_mda', 'One line description of project.',
      'Miscellaneous'),
 ]
 

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import vk_api
+import vk_mda
 
 
 def captcha_handler(captcha):
@@ -18,14 +18,14 @@ def main():
     """ Пример обработки капчи """
 
     login, password = 'python@vk.com', 'mypassword'
-    vk_session = vk_api.VkApi(
+    vk_session = vk_mda.VkApi(
         login, password,
         captcha_handler=captcha_handler  # функция для обработки капчи
     )
 
     try:
         vk_session.auth()
-    except vk_api.AuthError as error_msg:
+    except vk_mda.AuthError as error_msg:
         print(error_msg)
         return
 

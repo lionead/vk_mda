@@ -1,19 +1,19 @@
 ﻿# -*- coding: utf-8 -*-
 import collections
 
-import vk_api
-from vk_api.audio import VkAudio
+import vk_mda
+from vk_mda.audio import VkAudio
 
 
 def main():
     """ Пример составления топа исполнителей для профиля вк """
 
     login, password = 'login', 'password'
-    vk_session = vk_api.VkApi(login, password)
+    vk_session = vk_mda.VkApi(login, password)
 
     try:
         vk_session.auth()
-    except vk_api.AuthError as error_msg:
+    except vk_mda.AuthError as error_msg:
         print(error_msg)
         return
 

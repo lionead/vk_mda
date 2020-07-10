@@ -8,6 +8,6 @@
 
 __author__ = 'python273'
 __version__ = '3.0'
-__email__ = 'vk_api@python273.pw'
+__email__ = 'vk_mda@python273.pw'
 
 from .jconfig import Config

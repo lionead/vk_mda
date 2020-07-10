@@ -1,4 +1,4 @@
-from vk_api.execute import VkFunction
+from vk_mda.execute import VkFunction
 
 
 def test_execute(vk):

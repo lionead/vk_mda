@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import vk_api
+import vk_mda
 
 
 def auth_handler():
@@ -18,7 +18,7 @@ def main():
     """ Пример обработки двухфакторной аутентификации """
 
     login, password = 'python@vk.com', 'mypassword'
-    vk_session = vk_api.VkApi(
+    vk_session = vk_mda.VkApi(
         login, password,
         # функция для обработки двухфакторной аутентификации
         auth_handler=auth_handler
@@ -26,7 +26,7 @@ def main():
 
     try:
         vk_session.auth()
-    except vk_api.AuthError as error_msg:
+    except vk_mda.AuthError as error_msg:
         print(error_msg)
         return
 

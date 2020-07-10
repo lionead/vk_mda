@@ -1,23 +1,23 @@
 # -*- coding: utf-8 -*-
-import vk_api
+import vk_mda
 
 
 def main():
     """ Пример загрузки фото """
 
     login, password = 'python@vk.com', 'mypassword'
-    vk_session = vk_api.VkApi(login, password)
+    vk_session = vk_mda.VkApi(login, password)
 
     try:
         vk_session.auth(token_only=True)
-    except vk_api.AuthError as error_msg:
+    except vk_mda.AuthError as error_msg:
         print(error_msg)
         return
 
     """ В VkUpload реализованы методы загрузки файлов в ВК
     """
 
-    upload = vk_api.VkUpload(vk_session)
+    upload = vk_mda.VkUpload(vk_session)
 
     photo = upload.photo(  # Подставьте свои данные
         '/root/3301.jpg',

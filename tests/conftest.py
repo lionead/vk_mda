@@ -1,7 +1,7 @@
 import os
 import pytest
 
-from vk_api import VkApi
+from vk_mda import VkApi
 
 
 @pytest.fixture

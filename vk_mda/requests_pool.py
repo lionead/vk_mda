@@ -188,7 +188,7 @@ def vk_request_one_param_pool(vk_session, method, key, values,
         dict с ошибками при выполнении
 
     :param vk_session: объект VkApi
-    :type vk_session: vk_api.VkAPi
+    :type vk_session: vk_mda.VkAPi
 
     :param method: метод
     :type method: str

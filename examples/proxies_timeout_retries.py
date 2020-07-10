@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import vk_api
+import vk_mda
 from requests.adapters import HTTPAdapter
 
 
@@ -15,7 +15,7 @@ class MyHTTPAdapter(HTTPAdapter):
 
 def main():
     login, password = 'python@vk.com', 'mypassword'
-    vk_session = vk_api.VkApi(login, password)
+    vk_session = vk_mda.VkApi(login, password)
 
     # Proxies:
     vk_session.http.proxies = {

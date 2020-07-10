@@ -1,20 +1,20 @@
 # -*- coding: utf-8 -*-
-import vk_api
+import vk_mda
 
 
 def main():
     """ Пример получения всех постов со стены """
 
     login, password = 'python@vk.com', 'mypassword'
-    vk_session = vk_api.VkApi(login, password)
+    vk_session = vk_mda.VkApi(login, password)
 
     try:
         vk_session.auth(token_only=True)
-    except vk_api.AuthError as error_msg:
+    except vk_mda.AuthError as error_msg:
         print(error_msg)
         return
 
-    tools = vk_api.VkTools(vk_session)
+    tools = vk_mda.VkTools(vk_session)
 
     """ VkTools.get_all позволяет получить все объекты со всех страниц.
         Соответственно get_all используется только если метод принимает

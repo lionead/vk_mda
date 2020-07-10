@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-import vk_api
-from vk_api.streaming import VkStreaming
+import vk_mda
+from vk_mda.streaming import VkStreaming
 
 
 def main():
     """ Пример использования streaming
 	    https://vk.com/dev/streaming_api_docs
     """
-    vk = vk_api.VkApi(token=<Сервисный ключ доступа>)
+    vk = vk_mda.VkApi(token= < Сервисный ключ доступа >)
     streaming = VkStreaming(vk)
 
     streaming.delete_all_rules()

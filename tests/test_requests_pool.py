@@ -1,4 +1,4 @@
-from vk_api import VkRequestsPool, vk_request_one_param_pool
+from vk_mda import VkRequestsPool, vk_request_one_param_pool
 
 
 def test_requests_pool(vk):

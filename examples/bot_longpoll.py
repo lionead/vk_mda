@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-import vk_api
-from vk_api.bot_longpoll import VkBotLongPoll, VkBotEventType
+import vk_mda
+from vk_mda.bot_longpoll import VkBotLongPoll, VkBotEventType
 
 
 def main():
@@ -9,7 +9,7 @@ def main():
         https://vk.com/dev/bots_longpoll
     """
 
-    vk_session = vk_api.VkApi(token='your_group_token')
+    vk_session = vk_mda.VkApi(token='your_group_token')
 
     longpoll = VkBotLongPoll(vk_session, 'your_group_id')
 

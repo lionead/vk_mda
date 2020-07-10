@@ -2,10 +2,10 @@
 
 import requests
 
-import vk_api
-from vk_api import VkUpload
-from vk_api.longpoll import VkLongPoll, VkEventType
-from vk_api.utils import get_random_id
+import vk_mda
+from vk_mda import VkUpload
+from vk_mda.longpoll import VkLongPoll, VkEventType
+from vk_mda.utils import get_random_id
 
 
 def main():
@@ -14,11 +14,11 @@ def main():
     # Авторизация пользователя:
     """
     login, password = 'python@vk.com', 'mypassword'
-    vk_session = vk_api.VkApi(login, password)
+    vk_session = vk_mda.VkApi(login, password)
 
     try:
         vk_session.auth(token_only=True)
-    except vk_api.AuthError as error_msg:
+    except vk_mda.AuthError as error_msg:
         print(error_msg)
         return
     """
@@ -26,7 +26,7 @@ def main():
     # Авторизация группы (для групп рекомендуется использовать VkBotLongPoll):
     # при передаче token вызывать vk_session.auth не нужно
     """
-    vk_session = vk_api.VkApi(token='токен с доступом к сообщениям и фото')
+    vk_session = vk_mda.VkApi(token='токен с доступом к сообщениям и фото')
     """
 
     vk = vk_session.get_api()

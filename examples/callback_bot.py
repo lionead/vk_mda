@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from flask import Flask, request
-import vk_api
-from vk_api.utils import get_random_id
+import vk_mda
+from vk_mda.utils import get_random_id
 
 """
 Пример бота для группы ВКонтакте использующего
@@ -18,7 +18,7 @@ $ gunicorn callback_bot:app
 """
 
 app = Flask(__name__)
-vk_session = vk_api.VkApi(token='your_group_token')
+vk_session = vk_mda.VkApi(token='your_group_token')
 vk = vk_session.get_api()
 
 confirmation_code = 'smthing code'

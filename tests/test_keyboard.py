@@ -1,5 +1,5 @@
-from vk_api.keyboard import VkKeyboard, VkKeyboardColor
-from vk_api.utils import sjson_dumps
+from vk_mda.keyboard import VkKeyboard, VkKeyboardColor
+from vk_mda.utils import sjson_dumps
 
 KEYBOARD_TEST = {
     'one_time': False,

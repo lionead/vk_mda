@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from vk_api import vk_api
+from vk_mda import vk_api
 
 
 def main():

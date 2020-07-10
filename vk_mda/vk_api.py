@@ -78,7 +78,7 @@ class VkApi(object):
 
     `login` и `password` необходимы для автоматического получения токена при помощи
     Implicit Flow авторизации пользователя и возможности работы с веб-версией сайта
-    (включая :class:`vk_api.audio.VkAudio`)
+    (включая :class:`vk_mda.audio.VkAudio`)
 
     :param session: Кастомная сессия со своими параметрами(из библиотеки requests)
     :type session: :class:`requests.Session`
@@ -122,7 +122,7 @@ class VkApi(object):
 
         self.lock = threading.Lock()
 
-        self.logger = logging.getLogger('vk_api')
+        self.logger = logging.getLogger('vk_mda')
 
     @property
     def _sid(self):
@@ -303,7 +303,7 @@ class VkApi(object):
             self.storage.save()
         else:
             raise AuthError(
-                'Unknown error. Please send bugreport to vk_api@python273.pw'
+                'Unknown error. Please send bugreport to vk_mda@python273.pw'
             )
 
         response = self._pass_security_check(response)

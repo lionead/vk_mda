@@ -4,8 +4,8 @@
     Описание VKScript (языка execute): https://vk.com/dev/execute
 """
 
-import vk_api
-from vk_api.execute import VkFunction
+import vk_mda
+from vk_mda.execute import VkFunction
 
 
 vk_add = VkFunction(args=('x', 'y'), code='''
@@ -27,11 +27,11 @@ vk_get_filtered = VkFunction(
 
 def main():
     login, password = 'python@vk.com', 'mypassword'
-    vk_session = vk_api.VkApi(login, password)
+    vk_session = vk_mda.VkApi(login, password)
 
     try:
         vk_session.auth(token_only=True)
-    except vk_api.AuthError as error_msg:
+    except vk_mda.AuthError as error_msg:
         print(error_msg)
         return
 
