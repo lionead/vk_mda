@@ -1,6 +1,7 @@
 Примеры использования библиотеки vk_api
 ======
 'python@vk.com' замените на ваш логин, а 'mypassword' на пароль
+В Callback-кнопке token заменяется на токен группы, а group_id на айди группы в VK в любом формате (с - и без)
 
 'bot_api_token' нужно заменить на токен группы
 * [Отправка запросов к API (VkApi)](./simple_example.py)
@@ -19,3 +20,4 @@
 * [Работа с Streaming](./streaming.py)
 * [Работа с VkRequestsPool](./requests_pool.py)
 * [Работа с прокси и использование таймаутов](./proxies_timeout_retries.py)
+* [Добавление Callback-кнопки в клавиатуру](./callback_button.py)

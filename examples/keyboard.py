@@ -26,7 +26,9 @@ def main():
                                owner_id=-181108510, 
                                label="Отправить клавиатуру",
                                hash="sendKeyboard")
-                               
+
+    keyboard.add_line()
+    keyboard.add_callback_button('Кнопка с Callback [https://vk.cc/awOaOU]')
 
     vk.messages.send(
         peer_id=123456,
