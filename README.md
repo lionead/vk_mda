@@ -2,7 +2,6 @@ vk_mda (vk_api mod) ![Python 2.7, 3.4+](https://img.shields.io/pypi/pyversions/v
 =================================================================================================================================================================================
 **vk_mda** – **Модификация модуля** [**vk_api**](https://github.com/python273/vk_api) / Python модуль для создания скриптов для социальной сети Вконтакте (vk.com API wrapper)
 
-* [Документация vk_api](https://vk-api.readthedocs.io/en/latest/)
 * [Примеры использования](./examples) (python3)
 * [Официальная документация по методам API](https://vk.com/dev/methods)
 
@@ -19,4 +18,4 @@ print(vk.wall.post(message='Hello world!'))
 
 Установка
 ------------
-    $ git clone https://github.com/lionead/vk_mda
+    $ git clone https://github.com/lionead/vk_mda.git
