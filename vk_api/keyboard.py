@@ -47,7 +47,10 @@ class VkKeyboardButton(Enum):
     
     #: Кнопка с ссылкой
     OPENLINK = "open_link"
-
+    
+    #: CallBack кнопка
+    CALLBACK = "callback"
+    
 
 
 class VkKeyboard(object):
@@ -81,7 +84,43 @@ class VkKeyboard(object):
         keyboard = cls()
         keyboard.keyboard['buttons'] = []
         return keyboard.get_keyboard()
+    
+    def add_callback_button(self, label, color=VkKeyboardColor.DEFAULT, payload=None):
+        """ Добавить callback кнопку.
+            Максимальное количество кнопок на строке - 4
 
+        :param label: Надпись на кнопке и текст, отправляющийся при её нажатии.
+        :type label: str
+        :param color: цвет кнопки.
+        :type color: VkKeyboardColor or str
+        :param payload: Параметр для callback api
+        :type payload: str or list or dict
+        """
+
+        current_line = self.lines[-1]
+
+        if len(current_line) >= 4:
+            raise ValueError('Max 4 buttons on a line')
+
+        color_value = color
+
+        if isinstance(color, VkKeyboardColor):
+            color_value = color_value.value
+
+        if payload is not None and not isinstance(payload, six.string_types):
+            payload = sjson_dumps(payload)
+
+        button_type = VkKeyboardButton.CALLBACK.value
+
+        current_line.append({
+            'color': color_value,
+            'action': {
+                'type': button_type,
+                'payload': payload,
+                'label': label,
+            }
+        })
+        
     def add_button(self, label, color=VkKeyboardColor.DEFAULT, payload=None):
         """ Добавить кнопку с текстом.
             Максимальное количество кнопок на строке - 4
