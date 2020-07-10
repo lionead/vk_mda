@@ -5,9 +5,9 @@ from vk_mda.streaming import VkStreaming
 
 def main():
     """ Пример использования streaming
-	    https://vk.com/dev/streaming_api_docs
+        https://vk.com/dev/streaming_api_docs
     """
-    vk = vk_mda.VkApi(token= < Сервисный ключ доступа >)
+    vk = vk_mda.VkApi(token='< Сервисный ключ доступа >')
     streaming = VkStreaming(vk)
 
     streaming.delete_all_rules()
@@ -22,5 +22,6 @@ def main():
         print("Текст: " + event['text'])
         print("_____________________________________________________")
 
+
 if __name__ == '__main__':
-	main()
+    main()

@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import vk_mda as vk_api
 from vk_mda.keyboard import VkKeyboard
 from vk_mda.bot_longpoll import VkBotLongPoll, VkBotEventType
