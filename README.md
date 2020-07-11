@@ -18,4 +18,4 @@ print(vk.wall.post(message='Hello world!'))
 
 Установка
 ------------
-    $ pip install vk-mda
+    $ pip install vk_mda
