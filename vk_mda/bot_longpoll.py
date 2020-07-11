@@ -18,6 +18,21 @@ class DotDict(dict):
     __delattr__ = dict.__delitem__
 
 
+class DotDictNew(dict):
+    __getattr__ = dict.__getitem__
+    __setattr__ = dict.__setitem__
+    __delattr__ = dict.__delitem__
+
+    def __init__(self, dct):
+        for key, value in dct.items():
+            if hasattr(value, 'keys'):
+                value = DotDictNew(value)
+            if isinstance(value, list):
+                for i, val in enumerate(value):
+                    value[i] = DotDictNew(val)
+            self[key] = value
+
+
 class VkBotEventType(Enum):
     MESSAGE_NEW = 'message_new'
     MESSAGE_REPLY = 'message_reply'
@@ -126,7 +141,7 @@ class VkBotEvent(object):
 
         self.object = DotDict(raw['object'])
         try:
-            self.message = DotDict(raw['object']['message'])
+            self.message = DotDictNew(raw['object']['message'])
         except KeyError:
             self.message = None
         self.obj = self.object
@@ -168,7 +183,7 @@ class VkBotMessageEvent(VkBotEvent):
         self.chat_id = None
 
         peer_id = self.obj.peer_id or self.message.peer_id
-        
+
         if peer_id < 0:
             self.from_group = True
         elif peer_id < CHAT_START_ID:
