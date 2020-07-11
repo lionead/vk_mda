@@ -6,9 +6,9 @@ vk_mda (vk_api mod) ![Python 2.7, 3.4+](https://img.shields.io/pypi/pyversions/v
 * [Официальная документация по методам API](https://vk.com/dev/methods)
 
 ```python
-import vk_mda as vk_api
+import vk_mda
 
-vk_session = vk_api.VkApi('+71112223344', 'mypassword')
+vk_session = vk_mda.VkApi('+71112223344', 'mypassword')
 vk_session.auth()
 
 vk = vk_session.get_api()
